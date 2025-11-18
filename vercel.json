@@ -1,8 +1,8 @@
 {
-  "buildCommand": "npm run build",
-  "devCommand": "npm run dev",
-  "installCommand": "npm install",
+  "buildCommand": "cd app && npm run build",
+  "devCommand": "cd app && npm run dev",
+  "installCommand": "cd app && npm install",
   "framework": "nextjs",
-  "regions": ["nrt1"]
+  "rootDirectory": "app"
 }
 
