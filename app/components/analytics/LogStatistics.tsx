@@ -1,7 +1,7 @@
 'use client'
 
-import { LogStatistics as LogStats, LogFilter } from '../../lib/schema'
-import { getLogStorage } from '../../lib/utils/logStorage'
+import { LogStatistics as LogStats, LogFilter } from '../../../lib/schema'
+import { getLogStorage } from '../../../lib/utils/logStorage'
 import { useEffect, useState } from 'react'
 
 interface LogStatisticsProps {

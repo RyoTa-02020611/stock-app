@@ -1,6 +1,6 @@
 'use client'
 
-import { LogEntry, LogLevel } from '../../lib/schema'
+import { LogEntry, LogLevel } from '../../../lib/schema'
 import { useState } from 'react'
 
 interface LogEntryProps {

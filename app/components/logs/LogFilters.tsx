@@ -1,6 +1,6 @@
 'use client'
 
-import { LogFilter, LogLevel } from '../../lib/schema'
+import { LogFilter, LogLevel } from '../../../lib/schema'
 import { useState } from 'react'
 
 interface LogFiltersProps {

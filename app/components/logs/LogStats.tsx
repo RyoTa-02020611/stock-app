@@ -1,6 +1,6 @@
 'use client'
 
-import { LogStatistics } from '../../lib/schema'
+import { LogStatistics } from '../../../lib/schema'
 
 interface LogStatsProps {
   stats: LogStatistics

@@ -1,8 +1,8 @@
 'use client'
 
 import { useState, useEffect, useMemo } from 'react'
-import { LogEntry, LogFilter, LogStatistics } from '../../lib/schema'
-import { getLogStorage } from '../../lib/utils/logStorage'
+import { LogEntry, LogFilter, LogStatistics } from '../../../lib/schema'
+import { getLogStorage } from '../../../lib/utils/logStorage'
 import LogEntryComponent from './LogEntry'
 import LogFilters from './LogFilters'
 import LogStats from './LogStats'

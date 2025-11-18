@@ -1,6 +1,6 @@
 'use client'
 
-import { ErrorTrend } from '../../lib/utils/errorAnalyzer'
+import { ErrorTrend } from '../../../lib/utils/errorAnalyzer'
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts'
 
 interface ErrorRateChartProps {
