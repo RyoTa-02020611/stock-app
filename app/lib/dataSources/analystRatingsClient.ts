@@ -282,10 +282,12 @@ class AnalystRatingsClient {
           'strongSell': 'strong_sell',
         }
 
+        const rating = rec.rating && ratingMap[rec.rating] ? ratingMap[rec.rating] : 'hold'
+
         return {
           symbol,
           analyst: 'Finnhub Consensus',
-          rating: ratingMap[rec.rating] || 'hold',
+          rating,
           targetPrice: currentPrice * 1.1, // Estimate
           currentPrice,
           priceChange: 0,

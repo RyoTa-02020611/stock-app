@@ -102,6 +102,40 @@ export default function LogViewer() {
     loadLogs()
   }
 
+  const handleImport = () => {
+    const input = document.createElement('input')
+    input.type = 'file'
+    input.accept = '.json'
+    input.onchange = (e) => {
+      const file = (e.target as HTMLInputElement).files?.[0]
+      if (!file || !logStorage) return
+
+      const reader = new FileReader()
+      reader.onload = (event) => {
+        try {
+          const json = event.target?.result as string
+          const imported = logStorage.importLogs(json)
+          alert(`${imported}件のログをインポートしました`)
+          loadLogs()
+        } catch (error) {
+          alert('ログのインポートに失敗しました')
+          console.error('Import error:', error)
+        }
+      }
+      reader.readAsText(file)
+    }
+    input.click()
+  }
+
+  const handleClearAll = () => {
+    if (!logStorage) return
+    if (!confirm('すべてのログを削除しますか？この操作は取り消せません。')) return
+
+    logStorage.clearAllLogs()
+    alert('すべてのログを削除しました')
+    loadLogs()
+  }
+
   if (loading && logs.length === 0) {
     return <LoadingSpinner message="ログを読み込んでいます..." />
   }

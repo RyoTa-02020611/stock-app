@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { getMarketTrendsClient } from '../../../lib/dataSources/marketTrendsClient'
+import { getMarketTrendsClient } from '../../lib/dataSources/marketTrendsClient'
 
 /**
  * GET /api/market-trends?type=all

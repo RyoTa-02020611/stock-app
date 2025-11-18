@@ -105,32 +105,33 @@ class AutoMonitor {
 
     for (const position of positions) {
       // Check user-defined price alerts
-      const symbolAlerts = userAlerts.filter(a => a.symbol === position.symbol && a.type === 'price')
+      const symbolAlerts = userAlerts.filter(a => a.symbol === position.symbol && a.type === 'PRICE')
       
       for (const alert of symbolAlerts) {
-        if (alert.condition === 'above' && position.currentPrice >= (alert.value || 0)) {
+        const targetValue = alert.targetValue || alert.threshold || 0
+        if (alert.condition === 'ABOVE' && position.currentPrice >= targetValue) {
           alerts.push({
             id: `price-${alert.id}`,
             type: 'price',
             symbol: position.symbol,
-            severity: alert.priority === 'high' ? 'high' : 'medium',
+            severity: 'medium',
             title: `${position.symbol}が目標価格に到達`,
-            message: `${position.symbol}の価格が$${position.currentPrice.toFixed(2)}に到達しました（目標: $${alert.value})`,
+            message: `${position.symbol}の価格が$${position.currentPrice.toFixed(2)}に到達しました（目標: $${targetValue})`,
             timestamp: new Date().toISOString(),
             actionRequired: true,
-            actionType: alert.action || 'watch',
+            actionType: 'watch',
           })
-        } else if (alert.condition === 'below' && position.currentPrice <= (alert.value || 0)) {
+        } else if (alert.condition === 'BELOW' && position.currentPrice <= targetValue) {
           alerts.push({
             id: `price-${alert.id}`,
             type: 'price',
             symbol: position.symbol,
-            severity: alert.priority === 'high' ? 'high' : 'medium',
+            severity: 'medium',
             title: `${position.symbol}がアラート価格に到達`,
-            message: `${position.symbol}の価格が$${position.currentPrice.toFixed(2)}に到達しました（アラート: $${alert.value})`,
+            message: `${position.symbol}の価格が$${position.currentPrice.toFixed(2)}に到達しました（アラート: $${targetValue})`,
             timestamp: new Date().toISOString(),
             actionRequired: true,
-            actionType: alert.action || 'watch',
+            actionType: 'watch',
           })
         }
       }
@@ -271,7 +272,7 @@ class AutoMonitor {
         }
 
         // Check user-defined news alerts
-        const newsAlerts = userAlerts.filter(a => a.symbol === position.symbol && a.type === 'news')
+        const newsAlerts = userAlerts.filter(a => a.symbol === position.symbol && a.type === 'NEWS')
         // News alert checking would be implemented here
       } catch (error) {
         console.error(`Error checking news for ${position.symbol}:`, error)

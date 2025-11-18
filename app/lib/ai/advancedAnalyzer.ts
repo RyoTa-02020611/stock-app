@@ -262,7 +262,7 @@ ${JSON.stringify(stockData, null, 2)}
 
   private parseAIResponse(content: string): AdvancedAnalysisResult {
     // Parse AI response (simplified - would need more robust parsing)
-    const summaryMatch = content.match(/要約[：:]\s*(.+?)(?=\n|重要ポイント|$)/s)
+    const summaryMatch = content.match(/要約[：:]\s*([\s\S]+?)(?=\n|重要ポイント|$)/)
     const keyPointsMatch = content.match(/重要ポイント[：:]\s*([\s\S]+?)(?=\nリスク|$)/)
     const risksMatch = content.match(/リスク[：:]\s*([\s\S]+?)(?=\n機会|$)/)
     const opportunitiesMatch = content.match(/機会[：:]\s*([\s\S]+?)(?=\n推奨事項|$)/)

@@ -252,10 +252,10 @@ class EarningsClient {
         reportDate: earning.fiscalDateEnding,
         fiscalQuarter: earning.reportedEPS ? `Q${earning.reportedEPS}` : 'Unknown',
         fiscalYear: new Date(earning.fiscalDateEnding).getFullYear(),
-        eps: parseFloat(earning.reportedEPS) || null,
-        epsEstimate: parseFloat(earning.estimatedEPS) || null,
+        eps: earning.reportedEPS ? parseFloat(earning.reportedEPS) || null : null,
+        epsEstimate: earning.estimatedEPS ? parseFloat(earning.estimatedEPS) || null : null,
         epsSurprise: earning.reportedEPS && earning.estimatedEPS
-          ? parseFloat(earning.reportedEPS) - parseFloat(earning.estimatedEPS)
+          ? (parseFloat(earning.reportedEPS) - parseFloat(earning.estimatedEPS))
           : null,
         revenue: null,
         revenueEstimate: null,

@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { getEarningsClient } from '../../../lib/dataSources/earningsClient'
+import { getEarningsClient } from '../../lib/dataSources/earningsClient'
 
 /**
  * GET /api/earnings?symbol=AAPL

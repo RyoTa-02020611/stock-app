@@ -57,8 +57,8 @@ class MarketTrendsClient {
     const cacheKey = `exchange_rates_${pairs.join(',')}`
     const cached = this.cache.get(cacheKey)
     
-    if (cached && Date.now() - cached.timestamp < this.CACHE_TTL) {
-      return cached.data
+    if (cached && Date.now() - cached.timestamp < this.CACHE_TTL && Array.isArray(cached.data)) {
+      return cached.data as ExchangeRate[]
     }
 
     try {
@@ -82,8 +82,8 @@ class MarketTrendsClient {
     const cacheKey = `commodities_${symbols.join(',')}`
     const cached = this.cache.get(cacheKey)
     
-    if (cached && Date.now() - cached.timestamp < this.CACHE_TTL) {
-      return cached.data
+    if (cached && Date.now() - cached.timestamp < this.CACHE_TTL && Array.isArray(cached.data)) {
+      return cached.data as CommodityPrice[]
     }
 
     try {
@@ -107,8 +107,8 @@ class MarketTrendsClient {
     const cacheKey = 'vix'
     const cached = this.cache.get(cacheKey)
     
-    if (cached && Date.now() - cached.timestamp < this.CACHE_TTL) {
-      return cached.data
+    if (cached && Date.now() - cached.timestamp < this.CACHE_TTL && cached.data !== null && !Array.isArray(cached.data)) {
+      return cached.data as VIXData
     }
 
     try {

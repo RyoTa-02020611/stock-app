@@ -17,7 +17,7 @@ interface StockImpact {
   shortTermImpact: number
   mediumTermImpact: number
   recommendation: 'buy' | 'hold' | 'sell' | 'watch'
-  topFactors: Array<{ source: string; impactScore: number; description: string }>
+  topFactors: Array<{ source: 'economic' | 'earnings' | 'market_trends' | 'social' | 'analyst' | 'news'; impactScore: number; description: string }>
 }
 
 export default function ImpactAnalysisDashboard() {

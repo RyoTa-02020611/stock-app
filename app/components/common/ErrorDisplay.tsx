@@ -71,7 +71,7 @@ export default function ErrorDisplay({
           <p className="text-gray-600 text-sm">{message}</p>
         </div>
 
-        {error && process.env.NODE_ENV === 'development' && (
+        {error !== undefined && error !== null && process.env.NODE_ENV === 'development' && (
           <details className="w-full mt-4">
             <summary className="text-gray-500 text-xs cursor-pointer hover:text-gray-700">
               詳細情報（開発モード）

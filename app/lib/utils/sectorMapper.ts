@@ -66,7 +66,6 @@ const SECTOR_MAP: Record<string, Sector> = {
   MCD: '消費財',
   SBUX: '消費財',
   NKE: '消費財',
-  '7203.T': '消費財', // トヨタ（自動車）
 
   // エネルギー
   XOM: 'エネルギー',

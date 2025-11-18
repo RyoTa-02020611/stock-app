@@ -30,9 +30,9 @@ export default function WatchlistPage() {
           symbol: pos.symbol,
           name: `${pos.symbol} Corporation`, // 実際の実装では銘柄名を取得
           price: pos.currentPrice,
-          change: pos.currentPrice - pos.averagePrice,
-          changePercent: pos.averagePrice > 0 
-            ? ((pos.currentPrice - pos.averagePrice) / pos.averagePrice) * 100 
+          change: pos.currentPrice - pos.averageCost,
+          changePercent: pos.averageCost > 0
+            ? ((pos.currentPrice - pos.averageCost) / pos.averageCost) * 100
             : 0,
           volume: 0,
         }))

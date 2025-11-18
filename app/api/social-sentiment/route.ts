@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { getSocialSentimentClient } from '../../../lib/dataSources/socialSentimentClient'
+import { getSocialSentimentClient } from '../../lib/dataSources/socialSentimentClient'
 
 /**
  * GET /api/social-sentiment?symbol=AAPL
