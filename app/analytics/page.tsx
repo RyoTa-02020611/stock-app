@@ -1,16 +1,16 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { getErrorAnalyzer, ErrorAnalysis } from '../lib/utils/errorAnalyzer'
-import { getApiAnalyzer, ApiAnalysis } from '../lib/utils/apiAnalyzer'
-import { getLogStorage } from '../lib/utils/logStorage'
-import { LogFilter } from '../lib/schema'
-import ErrorRateChart from '../components/analytics/ErrorRateChart'
-import ApiSuccessRateChart from '../components/analytics/ApiSuccessRateChart'
-import PerformanceMetricsChart from '../components/analytics/PerformanceMetricsChart'
-import LogTimelineChart from '../components/analytics/LogTimelineChart'
-import LogStatistics from '../components/analytics/LogStatistics'
-import LoadingSpinner from '../components/common/LoadingSpinner'
+import { getErrorAnalyzer, ErrorAnalysis } from '../../lib/utils/errorAnalyzer'
+import { getApiAnalyzer, ApiAnalysis } from '../../lib/utils/apiAnalyzer'
+import { getLogStorage } from '../../lib/utils/logStorage'
+import { LogFilter } from '../../lib/schema'
+import ErrorRateChart from '../../components/analytics/ErrorRateChart'
+import ApiSuccessRateChart from '../../components/analytics/ApiSuccessRateChart'
+import PerformanceMetricsChart from '../../components/analytics/PerformanceMetricsChart'
+import LogTimelineChart from '../../components/analytics/LogTimelineChart'
+import LogStatistics from '../../components/analytics/LogStatistics'
+import LoadingSpinner from '../../components/common/LoadingSpinner'
 
 export default function AnalyticsPage() {
   const [errorAnalysis, setErrorAnalysis] = useState<ErrorAnalysis | null>(null)
