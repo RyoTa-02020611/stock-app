@@ -1,7 +1,7 @@
 'use client'
 
-import { LogStatistics } from '../../../lib/schema'
-import { getLogStorage } from '../../../lib/utils/logStorage'
+import { LogStatistics } from '../../lib/schema'
+import { getLogStorage } from '../../lib/utils/logStorage'
 import { useEffect, useState } from 'react'
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts'
 

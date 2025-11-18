@@ -1,11 +1,11 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { getLogStorage } from '../../../lib/utils/logStorage'
-import { getErrorNotifier, ErrorThreshold } from '../../../lib/utils/errorNotifier'
-import { getPerformanceMonitor } from '../../../lib/utils/performanceMonitor'
-import { logger } from '../../../lib/utils/logger'
-import { LogLevel } from '../../../lib/schema'
+import { getLogStorage } from '../../lib/utils/logStorage'
+import { getErrorNotifier, ErrorThreshold } from '../../lib/utils/errorNotifier'
+import { getPerformanceMonitor } from '../../lib/utils/performanceMonitor'
+import { logger } from '../../lib/utils/logger'
+import { LogLevel } from '../../lib/schema'
 
 export default function LoggingSettingsPage() {
   const [maxLogs, setMaxLogs] = useState(10000)
